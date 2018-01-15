@@ -11,6 +11,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    flash[:message] = "Welcome!"
     erb :index
   end
 
