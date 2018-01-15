@@ -1,0 +1,13 @@
+
+<p> <%= @journal.content %> </p>
+
+<form class="" action="/journals/<%=@journal.id%>/edit" method="get">
+<input type="submit" name="Edit Journal" value="Edit Journal">
+</form>
+
+<form class="" action="/journals/<%=@journal.id%>/delete" method="post">
+<input type="hidden" name="_method" value="delete">
+<label for="">Delete Journal:</label>
+ <br>
+<input type="submit" name="submit" value="Delete Journal" id="Delete Journal">
+</form>

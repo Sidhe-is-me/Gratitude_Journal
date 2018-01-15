@@ -1,0 +1,9 @@
+<p> Welcome, <%= current_user.username %>
+<h2> Journal Entries </h2>
+<a href="/journals/new">New Journal?</a>
+<% @journals.each do |journal| %>
+  <div>
+    <%= journal.content %>
+  </div>
+
+<% end %>

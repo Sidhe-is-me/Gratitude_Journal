@@ -1,0 +1,5 @@
+<h1>Your Journals</h1>
+<%@user.journals.all.each do |journal|%>
+  <%=journal.content%>
+  <br></br>
+<%end%>
