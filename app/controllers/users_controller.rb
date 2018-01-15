@@ -4,7 +4,7 @@ use Rack::Flash
   get '/signup' do
     # binding.pry
      if !logged_in?
-       
+
         erb :'users/create_user'
       else
          redirect to '/journals'
@@ -13,11 +13,12 @@ use Rack::Flash
    end
 
    post '/signup' do
-     if params[:username] == "" || params[:password] == "" || params[:email] == ""
+     if params[:username] == " " || params[:password] == " " || params[:email] == " "
         redirect to '/signup'
       else
         @user = User.new(username: params[:username], email: params[:email], password: params[:password])
         @user.save
+        flash[:message] = "Account Created"
 
         session[:user_id] = @user.id
         redirect to '/journals'
@@ -48,6 +49,7 @@ use Rack::Flash
    get '/logout' do
      if logged_in?
        session.clear
+       flash[:message] = "You have logged out"
        redirect '/login'
      else
        redirect '/'

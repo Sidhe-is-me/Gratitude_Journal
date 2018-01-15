@@ -1,3 +1,9 @@
+<div id="flash_message">
+<% if flash.has?(:message) %>
+<%= flash[:message] %>
+<% end %>
+</div>
+
 <h1> Try Gratitude</h1>
 
 <a href="/login">Login</a>

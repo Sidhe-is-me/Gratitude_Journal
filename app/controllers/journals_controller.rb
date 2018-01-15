@@ -35,7 +35,7 @@ class JournalsController < ApplicationController
         :content_amazing => params[:content_amazing],
         :content_better=> params[:content_better])
       @journal.user_id = current_user.id
-
+      flash[:message] = "Journal Entry Created"
       @journal.save
       redirect "/journals"
     end
