@@ -6,9 +6,24 @@
 <input type="submit" name="Edit Journal" value="Edit Journal">
 </form>
 <br>
+
 <form action="/journals/<%=@journal.id%>/delete" method="post">
-<input type="submit" name="submit" value="Delete Journal">
+<input type="hidden" name="_method" value="delete">
+<label for="">Delete journal:</label>
+ <br>
+<input type="submit" name="submit" value="Delete journal" id="Delete journal">
 </form>
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
 <div id "greatful">
