@@ -56,6 +56,7 @@ class JournalsController < ApplicationController
     end
   end
 
+
   patch '/journals/:id' do
     @journal = Journal.find_by_id(params[:id])
     unless params[:content].empty?
@@ -76,4 +77,16 @@ class JournalsController < ApplicationController
       redirect '/login'
     end
   end
+
+# Get help to buld out a helper for the edit method for a journal params method
+  # def journal_params
+  #   params.require(:journal).permit(
+  #     :date => params[:date],
+  #     :content_greatful => params[:content_greatful],
+  #     :content_today_great => params[:content_today_great],
+  #     :content_affirmation => params[:content_affirmation],
+  #     :content_amazing => params[:content_amazing],
+  #     :content_better=> params[:content_better])
+  # end
+
 end
