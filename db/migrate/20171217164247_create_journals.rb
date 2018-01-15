@@ -2,7 +2,7 @@ class CreateJournals < ActiveRecord::Migration
   def change
     create_table :journals do |t|
       t.string :content
-      t.date :Date
+      t.date :date
       t.string :content
       t.string :content_greatful
       t.string :content_today_great

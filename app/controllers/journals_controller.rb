@@ -21,10 +21,16 @@ class JournalsController < ApplicationController
      end
 
   post '/journals' do
-    if params[:content].empty?
+    if params[:date].empty?
       redirect "/journals/new"
     else
-      @journal = Journal.create(:content => params[:content])
+      @journal = Journal.create(
+        :date => params[:date],
+        :content_greatful => params[:content_greatful],
+        :content_today_great => params[:content_today_great],
+        :content_affirmation => params[:content_affirmation],
+        :content_amazing => params[:content_amazing],
+        :content_better=> params[:content_better])
       @journal.user_id = current_user.id
 
       @journal.save

@@ -3,7 +3,10 @@
 <a href="/journals/new">New Journal?</a>
 <% @journals.each do |journal| %>
   <div>
-    <%= journal.content %>
+    <%= journal.date %>
+    <%= journal.content_greatful %>
+    <%= journal.content_today_great %>
+
   </div>
 
 <% end %>

@@ -1,38 +1,39 @@
 <h1>Create Journal</h1>
 
 <form action="/journals" method="post">
-  <input type="text"  name="content" >
+  <!-- <input type="text"  name="content" value = "Journal Title"> -->
 
   <div>
-	<h1>Date:<input type="date" value =<%=Date.today%>></h1>
+	<h1>Date:<input type="date" name= "date" value =<%=Date.today%>>
+  </h1>
 	</div>
 
 
 	<div id "greatful">
 	<h2>I am grateful for ...</h2>
 
-	<h4><input type="text" value ="content_greatful" > </h4>
+	<h4><input type="text" name ="content_greatful" > </h4>
 
 	</div>
 	<div id="todaygreat">
 	<h2>What would make today great ...</h2>
-	<h4><input type="text" value = "content_today_great"></h4>
+	<h4><input type="text" name = "content_today_great"></h4>
 
 		</div>
 		<div id="affirmation">
 		<h2>Daily Affirmation: I am...</h2>
-		<h1> </h1>	<input type="text" value = "content_affirmation"> <br>
+		<h1> </h1>	<input type="text" name = "content_affirmation"> <br>
 			<br>
 	</div>
 	<div id="amazing">
 	<h2>An Amazing thing that happened today ...</h2>
 
-	<h4><input type="text" value = "content_amazing"> </h4>
+	<h4><input type="text" name = "content_amazing"> </h4>
 
 	</div>
 	<div id="better">
 		<h2>How could I have made today even better?</h2>
-	<h4><input type="text" value = "content_better"> </h4>
+	<h4><input type="text" name = "content_better"> </h4>
 		</div>
 
 

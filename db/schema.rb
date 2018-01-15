@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20171217164247) do
 
   create_table "journals", force: :cascade do |t|
     t.string  "content"
-    t.date    "Date"
+    t.date    "date"
     t.string  "content_greatful"
     t.string  "content_today_great"
     t.string  "content_affirmation"
