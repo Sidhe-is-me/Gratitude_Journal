@@ -2,6 +2,42 @@
 <p><%=@journal.content%></p>
 <form action="/journals/<%=@journal.id%>" method="post">
   <input type="hidden" name="_method" value="patch">
-  <input type="text" name="content" placeholder="Content">
+  <!-- <input type="text" name="content" placeholder="Content"> -->
+  <div>
+  <h1>Date:<input type="date" name= "date" value =<%=Date.today%>>
+  </h1>
+  </div>
+
+
+  <div id "greatful">
+  <h2>I am grateful for ...</h2>
+
+  <h4><input type="text" name ="content_greatful" value="<%= @journal.content_greatful %>"> </h4>
+
+  </div>
+  <div id="todaygreat">
+  <h2>What would make today great ...</h2>
+  <h4><input type="text" name = "content_today_great" value="<%= @journal.content_today_great %>"></h4>
+
+    </div>
+    <div id="affirmation">
+    <h2>Daily Affirmation: I am...</h2>
+    <h1> </h1>	<input type="text" name = "content_affirmation" value="<%= @journal.content_affirmation %>"> <br>
+      <br>
+  </div>
+  <div id="amazing">
+  <h2>An Amazing thing that happened today ...</h2>
+
+  <h4><input type="text" name = "content_amazing" value="<%= @journal.content_amazing %>"> </h4>
+
+  </div>
+  <div id="better">
+    <h2>How could I have made today even better?</h2>
+  <h4><input type="text" name = "content_better" value="<%= @journal.content_better%>"> </h4>
+    </div>
+
+
+
+
   <input type="submit" value="submit">
 </form>
