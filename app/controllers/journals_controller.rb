@@ -3,7 +3,8 @@ class JournalsController < ApplicationController
   get '/journals' do
      if logged_in?
        @user = current_user
-       @journals = Journal.all
+       @journals = @user.journals
+       # @journals = Journal.all
        erb :'journals/journals'
      else
        redirect to 'users/login'
@@ -71,7 +72,9 @@ class JournalsController < ApplicationController
 
   delete '/journals/:id/delete' do
     @journal = Journal.find_by_id(params[:id])
+
     if logged_in? && @journal.user_id == current_user.id
+      binding.pry
       @journal.delete
       redirect '/journals'
     else

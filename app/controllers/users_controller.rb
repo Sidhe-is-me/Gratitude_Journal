@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
    get '/login' do
      if logged_in?
-      
+
        redirect to '/journals'
      else
        erb :'users/login'
