@@ -1,13 +1,13 @@
 <p> Welcome, <%= current_user.username %>
-<h2> Journal Entries </h2>
-<a href="/journals/new">New Journal?</a>
+<a href="/journals/new">New Journal Entry?</a>
 <br>
-<table border="1" style="width:100%;">
+<br>
+<table border="black" style="width:50%;">
   <thead>
   <tr>
-    <th>Date</th>
-    <th>Greatful</th>
-    <th>Made Today Great</th>
+    <th>Journal Entry</th>
+    <th>Journal Date</th>
+    <th>Modify?</th>
   </tr>
 </thead>
 <% @journals.each do |journal| %>
@@ -16,9 +16,8 @@
 
   <tbody>
     <tr>
-    <td><%= journal.date %></td>
-    <td>  <%= journal.content_greatful %></td>
-    <td>  <%= journal.content_today_great %></td>
+    <td><%= journal.id %></td>
+    <td>  <%= journal.date %></td>
 
     <td>Insert Edit Button
       <form action="/journals/<%#=@journal.id%>/edit" method="patch">

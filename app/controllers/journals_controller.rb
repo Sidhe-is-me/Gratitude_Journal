@@ -59,8 +59,9 @@ class JournalsController < ApplicationController
 
   patch '/journals/:id' do
     @journal = Journal.find_by_id(params[:id])
-    unless params[:content].empty?
-      @journal.content = params[:content]
+    # changed from contentent to date on below 2 lines
+    unless params[:date].empty?
+      @journal.date = params[:date]
       @journal.save
       erb :'journals/show_journal'
     else

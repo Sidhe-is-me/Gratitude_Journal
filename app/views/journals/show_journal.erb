@@ -1,13 +1,39 @@
-
-<p> <%= @journal.content %> </p>
-
-<form class="" action="/journals/<%=@journal.id%>/edit" method="get">
+<!--  changed below from content to date-->
+<H1>Journal Entry
+   <%=@journal.id%> <h1><%= @journal.date %></h>
+</h1>
+<form action="/journals/<%=@journal.id%>/edit" method="get">
 <input type="submit" name="Edit Journal" value="Edit Journal">
 </form>
-
-<form class="" action="/journals/<%=@journal.id%>/delete" method="post">
-<input type="hidden" name="_method" value="delete">
-<label for="">Delete Journal:</label>
- <br>
+<br>
+<form action="/journals/<%=@journal.id%>/delete" method="post">
 <input type="submit" name="submit" value="Delete Journal" id="Delete Journal">
 </form>
+
+</div>
+<div id "greatful">
+<h2>I am grateful for ...</h2>
+
+<h4><input type="text" name ="content_greatful" value="<%= @journal.content_greatful %>"> </h4>
+
+</div>
+<div id="todaygreat">
+<h2>What would make today great ...</h2>
+<h4><input type="text" name = "content_today_great" value="<%= @journal.content_today_great %>"></h4>
+
+  </div>
+  <div id="affirmation">
+  <h2>Daily Affirmation: I am...</h2>
+  <h1> </h1>	<input type="text" name = "content_affirmation" value="<%= @journal.content_affirmation %>"> <br>
+    <br>
+</div>
+<div id="amazing">
+<h2>An Amazing thing that happened today ...</h2>
+
+<h4><input type="text" name = "content_amazing" value="<%= @journal.content_amazing %>"> </h4>
+
+</div>
+<div id="better">
+  <h2>How could I have made today even better?</h2>
+<h4><input type="text" name = "content_better" value="<%= @journal.content_better%>"> </h4>
+  </div>
