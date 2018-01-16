@@ -1,6 +1,8 @@
 <% if flash.has?(:message) %>
 <%= flash[:message] %>
 <% end %>
+
+
 <h1>Your Journals</h1>
 <%@user.journals.all.each do |journal|%>
   <%=journal.content%>

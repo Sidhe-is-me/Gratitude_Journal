@@ -13,11 +13,14 @@ use Rack::Flash
    end
 
    post '/signup' do
-     if params[:username] == " " || params[:password] == " " || params[:email] == " "
+     @user = User.create(username: params[:username], email: params[:email], password: params[:password])
+
+     if  !@user.valid?
+       flash[:message] = " Entry Invalid: Please enter name, unique email & password to create a account"
+
         redirect to '/signup'
       else
-        @user = User.new(username: params[:username], email: params[:email], password: params[:password])
-        @user.save
+
         flash[:message] = "Account Created"
 
         session[:user_id] = @user.id
