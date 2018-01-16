@@ -3,36 +3,17 @@
 <% end %>
 
 <p> Welcome, <%= current_user.username %>
+  <br>
+  <br></br>
 <a href="/journals/new">New Journal Entry?</a>
 <br>
 <br>
-<table border="black" style="width:50%;">
-  <thead>
-  <tr>
-    <th>Journal Date</th>
-    <th>View</th>
-    <th>Modify?</th>
-  </tr>
-</thead>
+<h3>Click the date to update the Journal entry or Delete it</h>
 <% @journals.each do |journal|  %>
-  <div>
-    <!-- I need a link created that links to each journal and to create a table here for a nice visual  -->
-
-  <tbody>
-    <tr>
-    <td><%= journal.date %></td>
-    <td><a href="">View? Href not working for journals @journal.id</a></td>
-
-    <td>Edit button Not working
-      <form action="/journals/<%#=@journal.id%>/edit" method="patch">
-        <!-- The id is commented out above -->
-        <input type="submit" value="Edit Entry" >
-      </form>
-      <!-- If I add the button how do I connect it to the controller? How do I link the button to /journals/#{@journal.id}/edit -->
-    </td>
-    </tr>
-</tbody>
-  </div>
-
+    <td><a href="/journals/<%=journal.id%>"><%= journal.date %></a><td>
+      <br></br>
 <% end %>
+
+
+
 <a href="/logout">Log Out</a>

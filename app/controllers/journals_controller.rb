@@ -6,6 +6,7 @@ class JournalsController < ApplicationController
      if logged_in?
        @user = current_user
        @journals = @user.journals
+      @journal_id = (params[:id])
        # @journals = Journal.all
        erb :'journals/journals'
      else
