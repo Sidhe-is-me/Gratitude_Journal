@@ -6,24 +6,42 @@
     <title>Gratitude</title>
      <!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
          <link rel="stylesheet" type="text/css" href="/style.css">
+
   </head>
   <body>
 
 
 
     <h1>Welcome to Gratitude Journal</h>
-      <h3> “Piglet noticed that even though he had a Very Small Heart, it could hold a rather large amount of Gratitude.”
-      ― A.A. Milne, Winnie-the-Pooh </h3>
-        <!--For next upgrate use nokogiri to scrape in gratitude quotes here -->
-        <br>
-      <a href="/">Home Page</a>
-      <br>
+        <h4> This app is a gratitude journal. Practicing gratitude 3 times a week has been proven to be helpful with experiencing more positive emotions, feeling more alive, sleeping better, expressing more compassion and kindness, and even have stronger immune systems! So get to it and journal!</h>
+          <br>
+          <br>
+          <br>
+         <br>
 
+      <div style="border: 2px solid #EBE8D5; border-radius:10px; padding: 0px 7px 0px 7px;">
+        <h1 style="color: grey; text-decoration: none; font-size: 7px;">
+
+        <a href="https://www.goodreads.com/user/show/15827243-yvonne-dreptate" style="text-decoration: none;color:#aaa;font-family:georgia,serif;font-style:italic;font-size:5em;" rel="nofollow"></a>
+      </h3><br/><div id="gr_quote_body"></div>
+
+      <script src="https://www.goodreads.com/quotes/widget/15827243-yvonne-dreptate?v=2" type="text/javascript"></script>
+
+      <div style="text-align: right;"><a href="https://www.goodreads.com/quotes" style="color: grey; text-decoration: none; font-size: 7px;" rel="nofollow">Yvonne's Goodreads Quotes</a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+   <br>
       <%= yield %>
-
 
 
     </div>
 
   </body>
+  <br>
+  <br>
+  <a href="/">Home Page</a>
+  <br>
 </html>

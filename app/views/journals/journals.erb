@@ -2,15 +2,17 @@
 <%= flash[:message] %>
 <% end %>
 
-<p> Welcome, <%= current_user.username %>
+<h2> Welcome, <%= current_user.username %> </h2>
   <br>
   <br></br>
 <a href="/journals/new">New Journal Entry?</a>
 <br>
 <br>
 <h3>Click the date to update the Journal entry or Delete it</h>
+  <br>
+</br>
 <% @journals.each do |journal|  %>
-    <td><a href="/journals/<%=journal.id%>"><%= journal.date %></a><td>
+    <td><a href="/journals/<%=journal.id%>"><%= journal.date.strftime("%B %d %Y ") %></a><td>
       <br></br>
 <% end %>
 

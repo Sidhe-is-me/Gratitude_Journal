@@ -3,9 +3,10 @@
 <% end %>
 <!--  changed below from content to date-->
 <a href="/journals">Back to your Journal log?</a>
-<H1>Journal Entry
-   <%=@journal.id%> <h1><%= @journal.date %></h>
+<h1>Journal Entry
+   <h1><%= @journal.date %></h>
 </h1>
+
 <form action="/journals/<%=@journal.id%>/edit" method="get">
 <input type="submit" name="Edit Journal" value="Edit Journal">
 </form>
@@ -13,7 +14,7 @@
 
 <form action="/journals/<%=@journal.id%>/delete" method="post">
 <input type="hidden" name="_method" value="delete">
-<label for="">Delete journal:</label>
+
  <br>
 <input type="submit" name="submit" value="Delete journal" id="Delete journal">
 </form>

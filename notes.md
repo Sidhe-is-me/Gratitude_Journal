@@ -1,11 +1,3 @@
-Function
-1. Journals.erb page
-  Get view link working
-  get Edit button or link working
-
-2.Delete
-  Get delete function to work
-
 
 
 Beautify
