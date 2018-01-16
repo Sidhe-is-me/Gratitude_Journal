@@ -5,9 +5,7 @@ Function
 
 2.Delete
   Get delete function to work
-3.Validate
-  Log In- If no user flash no user by that username
-  Sign up
+
 
 
 Beautify

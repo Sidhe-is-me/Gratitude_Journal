@@ -34,6 +34,7 @@ use Rack::Flash
 
        redirect to '/journals'
      else
+       flash[:message] = "Your email or password is not valid, you have not been logged in. "
        erb :'users/login'
      end
    end
