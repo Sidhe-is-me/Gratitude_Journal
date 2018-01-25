@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+ruby '2.3.3'
 gem 'sinatra'
 gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
@@ -23,5 +24,5 @@ group :test do
 end
 
 group :production do
-
+gem 'pg', '~> 0.20'
 end
