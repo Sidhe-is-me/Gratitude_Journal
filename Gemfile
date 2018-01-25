@@ -11,6 +11,7 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem 'rack-flash3'
+gem 'pg', '~> 0.20'
 
 
 group :test do
@@ -22,5 +23,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+
 end
