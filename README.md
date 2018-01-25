@@ -14,6 +14,7 @@ Usage
 Run rake db:migrate.
 Run shotgun.
 Then you can go to your browser and view the application, at http://127.0.0.1:9393/
+App is also at https://gratitude-journal-sinatra.herokuapp.com/
 
 Contributing
 
