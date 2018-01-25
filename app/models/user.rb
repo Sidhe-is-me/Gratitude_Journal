@@ -1,4 +1,4 @@
-class User < ActiveRecord::Migration[4.2]::Base  
+class User < ActiveRecord::Base
   has_many :journals
   has_secure_password
   validates :username, presence: true

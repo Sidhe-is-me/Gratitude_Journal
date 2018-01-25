@@ -1,3 +1,3 @@
-class Journal < ActiveRecord::Migration[4.2]::Base  
+class Journal < ActiveRecord::Base
     belongs_to :user
 end
