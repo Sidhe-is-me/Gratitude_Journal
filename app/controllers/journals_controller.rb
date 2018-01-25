@@ -2,6 +2,11 @@ require 'rack-flash'
 class JournalsController < ApplicationController
   use Rack::Flash
 
+  get '/all_journals' do
+    @journals = Journal.all
+    erb :'journals/all_journals'
+  end
+
   get '/journals' do
      if logged_in?
        @user = current_user
@@ -51,7 +56,8 @@ class JournalsController < ApplicationController
 
   get '/journals/:id/edit' do
     @journal = Journal.find_by_id(params[:id])
-    if logged_in?
+    if current_user.id == @journal.user.id
+
       erb :'journals/edit_journal'
     else
       redirect '/login'
@@ -62,7 +68,7 @@ class JournalsController < ApplicationController
   patch '/journals/:id' do
     @journal = Journal.find_by_id(params[:id])
     # changed from contentent to date on below 2 lines
-    unless params[:date].empty?
+    if logged_in && @journal.user_id == current_user.id && !params[:date].empty?
       @journal.date = params[:date]
       @journal.save
       erb :'journals/show_journal'
@@ -82,15 +88,5 @@ class JournalsController < ApplicationController
     end
   end
 
-# Get help to buld out a helper for the edit method for a journal params method
-  # def journal_params
-  #   params.require(:journal).permit(
-  #     :date => params[:date],
-  #     :content_greatful => params[:content_greatful],
-  #     :content_today_great => params[:content_today_great],
-  #     :content_affirmation => params[:content_affirmation],
-  #     :content_amazing => params[:content_amazing],
-  #     :content_better=> params[:content_better])
-  # end
 
 end
